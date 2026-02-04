@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { MapPin, Zap, Calendar, ArrowRight, X } from "lucide-react";
+import { MapPin, Zap, Calendar, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
-import project5 from "@/assets/project-5.jpg";
-import project6 from "@/assets/project-6.jpg";
+// Real TechLam project images
+import popeBenedictHospital from "@/assets/real-projects/solar-systems-pope-benedict.jpeg";
+import karenDemeseSisters from "@/assets/real-projects/commercial-grid-tied-karen.jpeg";
+import nyakiambiGirls from "@/assets/real-projects/large-rooftop-installation.jpeg";
+import domesticWaterHeater from "@/assets/real-projects/dayliff-ultra-sun-heater.jpeg";
+import boreholeSolarization from "@/assets/real-projects/borehole-solarization-pope-benedict.jpeg";
+import commercialRooftop from "@/assets/real-projects/red-roof-solar-installation.jpeg";
 
 interface Project {
   id: number;
@@ -27,103 +28,103 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Mombasa Warehouse Complex",
-    category: "Commercial",
-    location: "Mombasa, Kenya",
-    capacity: "250 kW",
+    title: "Pope Benedict Hospital",
+    category: "Healthcare",
+    location: "Nyahururu, Kenya",
+    capacity: "100 kW",
     year: "2024",
-    image: project1,
-    description: "Large-scale rooftop solar installation for a logistics warehouse, providing clean energy for operations and cold storage facilities.",
+    image: popeBenedictHospital,
+    description: "Comprehensive solar PV installation for Pope Benedict Hospital, providing reliable clean energy for critical medical equipment and hospital operations.",
     results: [
-      "45% reduction in energy costs",
-      "Power generation: 380,000 kWh/year",
-      "CO₂ offset: 285 tons annually",
-      "ROI achieved in 4.5 years",
+      "100 kW inverter rated power",
+      "16.25 MWh total yield",
+      "Powers critical care units",
+      "Real-time energy monitoring",
     ],
   },
   {
     id: 2,
-    title: "Karen Residential Estate",
-    category: "Residential",
-    location: "Nairobi, Kenya",
-    capacity: "8 kW + Solar Water",
+    title: "Karen Demese Sisters Convent",
+    category: "Commercial",
+    location: "Karen, Nairobi",
+    capacity: "60 kW",
     year: "2024",
-    image: project2,
-    description: "Integrated solar PV and solar water heating system for a luxury residential property, ensuring energy independence.",
+    image: karenDemeseSisters,
+    description: "Grid-tied solar system installation for the Demese Sisters facility in Karen, featuring modern rooftop panels and smart monitoring.",
     results: [
-      "85% energy independence",
-      "Hot water for family of 6",
-      "Annual savings: KES 420,000",
-      "Smart monitoring included",
+      "60 kW inverter rated power",
+      "10.11 MWh total yield",
+      "Minimal grid dependency",
+      "Smart energy management",
     ],
   },
   {
     id: 3,
-    title: "Turkana Solar Farm",
-    category: "Utility Scale",
-    location: "Turkana County, Kenya",
-    capacity: "5 MW",
-    year: "2023",
-    image: project3,
-    description: "Ground-mounted solar farm serving rural communities, providing reliable electricity to over 10,000 households.",
+    title: "Nyakiambi Girls School",
+    category: "Education",
+    location: "Central Kenya",
+    capacity: "50 kW",
+    year: "2024",
+    image: nyakiambiGirls,
+    description: "Solar electrification project for Nyakiambi Girls Secondary School, enabling digital learning and reducing operational costs.",
     results: [
-      "Powers 10,000+ households",
-      "Created 150+ local jobs",
-      "Zero carbon emissions",
-      "25-year power purchase agreement",
+      "50 kW inverter rated power",
+      "980.25 kWh total yield",
+      "Reduced electricity bills",
+      "Evening study programs enabled",
     ],
   },
   {
     id: 4,
-    title: "Kenyatta Hospital Annex",
-    category: "Healthcare",
+    title: "Residential Solar Water Heater",
+    category: "Residential",
     location: "Nairobi, Kenya",
-    capacity: "150 kW",
-    year: "2023",
-    image: project4,
-    description: "Critical power solution for healthcare facility ensuring uninterrupted power for medical equipment and patient care.",
+    capacity: "300L Dayliff Ultra Sun",
+    year: "2024",
+    image: domesticWaterHeater,
+    description: "Installation of Dayliff Ultra Sun evacuated tube solar water heating system for residential property, providing reliable hot water year-round.",
     results: [
-      "99.9% uptime reliability",
-      "Backup battery storage included",
-      "Powers critical care units",
-      "50% energy cost reduction",
+      "300L hot water capacity",
+      "Zero electricity for heating",
+      "25-year panel lifespan",
+      "Annual savings: KES 180,000",
     ],
   },
   {
     id: 5,
-    title: "Makueni County Schools",
-    category: "Education",
-    location: "Makueni, Kenya",
-    capacity: "75 kW (15 schools)",
+    title: "Borehole Solarization Project",
+    category: "Water & Agriculture",
+    location: "Nyahururu, Kenya",
+    capacity: "Ground-mounted Array",
     year: "2023",
-    image: project5,
-    description: "Solar electrification project for 15 rural schools, enabling digital learning and improved educational outcomes.",
+    image: boreholeSolarization,
+    description: "Solar-powered borehole pump system at Pope Benedict Hospital, ensuring reliable water supply using clean renewable energy.",
     results: [
-      "15 schools electrified",
-      "Computer labs now operational",
-      "Evening study programs enabled",
-      "5,000+ students benefited",
+      "24/7 water pumping capability",
+      "Zero fuel costs",
+      "Reduced maintenance needs",
+      "Sustainable water access",
     ],
   },
   {
     id: 6,
-    title: "Athi River Industrial Park",
-    category: "Industrial",
-    location: "Machakos, Kenya",
-    capacity: "500 kW",
+    title: "Commercial Rooftop Installation",
+    category: "Commercial",
+    location: "Central Kenya",
+    capacity: "75 kW",
     year: "2024",
-    image: project6,
-    description: "Comprehensive solar solution for manufacturing facility with power factor correction and energy monitoring systems.",
+    image: commercialRooftop,
+    description: "Large-scale rooftop solar installation with professional mounting and Huawei inverter systems for optimal energy production.",
     results: [
-      "60% peak demand reduction",
-      "Power factor improved to 0.98",
+      "40% energy cost reduction",
+      "Professional installation team",
+      "Huawei smart inverters",
       "Real-time EPMS monitoring",
-      "Annual savings: KES 8.5M",
     ],
   },
 ];
 
-const categories = ["All", "Commercial", "Residential", "Utility Scale", "Healthcare", "Education", "Industrial"];
+const categories = ["All", "Healthcare", "Commercial", "Education", "Residential", "Water & Agriculture"];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -168,7 +169,7 @@ export const Projects = () => {
             Featured <span className="text-gradient">Installations</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Explore our portfolio of successful solar installations across Kenya, from residential homes to large-scale industrial facilities.
+            Explore our portfolio of successful solar installations across Kenya, from hospitals and schools to residential homes and commercial facilities.
           </p>
         </motion.div>
 

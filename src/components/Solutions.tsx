@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import { Sun, Droplets, BarChart3, Zap, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
+// Real project images for solutions
+import solarPVImage from "@/assets/real-projects/commercial-rooftop-panels.jpeg";
+import waterHeaterImage from "@/assets/real-projects/dayliff-ultra-sun-heater.jpeg";
+import monitoringImage from "@/assets/real-projects/energy-monitoring-dashboard.jpeg";
+import pfcImage from "@/assets/real-projects/power-factor-correction.jpeg";
+
 const solutions = [
   {
     icon: Sun,
@@ -9,6 +15,7 @@ const solutions = [
     description:
       "High-performance solar photovoltaic systems designed to minimize energy costs while promoting sustainability for businesses and homes.",
     color: "from-primary to-primary/70",
+    image: solarPVImage,
   },
   {
     icon: Droplets,
@@ -16,6 +23,7 @@ const solutions = [
     description:
       "Harness Kenya's abundant sunshine with our reliable hot water solutions for homes and institutions, ensuring energy efficiency.",
     color: "from-accent to-accent/70",
+    image: waterHeaterImage,
   },
   {
     icon: BarChart3,
@@ -23,6 +31,7 @@ const solutions = [
     description:
       "Advanced electrical power monitoring systems (EPMS) offering real-time insights to optimize performance and reduce expenditures.",
     color: "from-primary to-primary/70",
+    image: monitoringImage,
   },
   {
     icon: Zap,
@@ -30,6 +39,7 @@ const solutions = [
     description:
       "Lower energy bills and improve system performance with our power factor correction banks for industrial applications.",
     color: "from-accent to-accent/70",
+    image: pfcImage,
   },
 ];
 
@@ -87,12 +97,21 @@ export const Solutions = () => {
           {solutions.map((solution, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card className="group h-full border-0 shadow-card hover:shadow-elevated transition-all duration-300 bg-card overflow-hidden">
-                <CardContent className="p-6 flex flex-col h-full">
+                {/* Image */}
+                <div className="relative h-40 overflow-hidden">
+                  <img 
+                    src={solution.image} 
+                    alt={solution.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                   <div
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${solution.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
+                    className={`absolute bottom-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br ${solution.color} flex items-center justify-center shadow-lg`}
                   >
-                    <solution.icon className="w-7 h-7 text-primary-foreground" />
+                    <solution.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
+                </div>
+                <CardContent className="p-6 flex flex-col">
                   <h3 className="text-xl font-semibold text-foreground mb-3">
                     {solution.title}
                   </h3>
