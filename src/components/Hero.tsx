@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Zap, Shield, TrendingDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-solar.jpg";
+import heroImage from "@/assets/real-projects/large-rooftop-installation.jpeg";
 
 const stats = [
   { icon: Zap, value: "500+", label: "Installations" },
@@ -19,7 +19,7 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Solar panel installation"
+          alt="TechLam solar panel installation on commercial rooftop"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/40" />

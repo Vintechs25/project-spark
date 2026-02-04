@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, Award, Users, Globe } from "lucide-react";
+import teamInstallImage from "@/assets/real-projects/school-solar-installation.jpeg";
 
 const features = [
   "Certified renewable energy experts",
@@ -74,7 +75,7 @@ export const About = () => {
             </div>
           </motion.div>
 
-          {/* Visual Element */}
+          {/* Real Image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -82,41 +83,44 @@ export const About = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative aspect-square max-w-lg mx-auto">
-              {/* Decorative circles */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30"
-              />
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-8 rounded-full border-2 border-dashed border-accent/30"
-              />
-              
-              {/* Center content */}
-              <div className="absolute inset-16 rounded-full bg-hero-gradient flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-primary-foreground">10+</div>
-                  <div className="text-sm text-primary-foreground/80">Years of Excellence</div>
-                </div>
+            <div className="relative">
+              {/* Main image */}
+              <div className="rounded-2xl overflow-hidden shadow-elevated">
+                <img
+                  src={teamInstallImage}
+                  alt="TechLam team installing solar panels"
+                  className="w-full h-auto object-cover"
+                />
               </div>
-
+              
               {/* Floating badges */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-4 right-4 px-4 py-2 rounded-lg bg-card text-card-foreground shadow-card text-sm font-medium"
+                className="absolute -top-4 -right-4 px-4 py-2 rounded-lg bg-card text-card-foreground shadow-card text-sm font-medium"
               >
                 🌱 Eco-Friendly
               </motion.div>
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-4 left-4 px-4 py-2 rounded-lg bg-card text-card-foreground shadow-card text-sm font-medium"
+                className="absolute -bottom-4 -left-4 px-4 py-2 rounded-lg bg-card text-card-foreground shadow-card text-sm font-medium"
               >
                 ⚡ Energy Efficient
+              </motion.div>
+              
+              {/* Experience badge */}
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, type: "spring" }}
+                className="absolute bottom-8 right-8 w-24 h-24 rounded-full bg-hero-gradient flex items-center justify-center shadow-elevated"
+              >
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary-foreground">10+</div>
+                  <div className="text-xs text-primary-foreground/80">Years</div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
