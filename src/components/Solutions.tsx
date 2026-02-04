@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Sun, Droplets, BarChart3, Zap, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 // Real project images for solutions
 import solarPVImage from "@/assets/real-projects/commercial-rooftop-panels.jpeg";
@@ -16,6 +17,7 @@ const solutions = [
       "High-performance solar photovoltaic systems designed to minimize energy costs while promoting sustainability for businesses and homes.",
     color: "from-primary to-primary/70",
     image: solarPVImage,
+    href: "/solar-installation-kenya",
   },
   {
     icon: Droplets,
@@ -24,6 +26,7 @@ const solutions = [
       "Harness Kenya's abundant sunshine with our reliable hot water solutions for homes and institutions, ensuring energy efficiency.",
     color: "from-accent to-accent/70",
     image: waterHeaterImage,
+    href: "/solar-water-heaters",
   },
   {
     icon: BarChart3,
@@ -32,6 +35,7 @@ const solutions = [
       "Advanced electrical power monitoring systems (EPMS) offering real-time insights to optimize performance and reduce expenditures.",
     color: "from-primary to-primary/70",
     image: monitoringImage,
+    href: "/energy-monitoring",
   },
   {
     icon: Zap,
@@ -40,6 +44,7 @@ const solutions = [
       "Lower energy bills and improve system performance with our power factor correction banks for industrial applications.",
     color: "from-accent to-accent/70",
     image: pfcImage,
+    href: "#contact",
   },
 ];
 
@@ -64,7 +69,7 @@ const itemVariants = {
 
 export const Solutions = () => {
   return (
-    <section id="solutions" className="py-24 lg:py-32 bg-subtle-gradient">
+    <section id="services" className="py-24 lg:py-32 bg-subtle-gradient">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -118,13 +123,23 @@ export const Solutions = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed flex-grow">
                     {solution.description}
                   </p>
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 text-primary font-medium mt-4 group-hover:gap-3 transition-all"
-                  >
-                    Learn more
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+                  {solution.href.startsWith('/') ? (
+                    <Link
+                      to={solution.href}
+                      className="inline-flex items-center gap-2 text-primary font-medium mt-4 group-hover:gap-3 transition-all"
+                    >
+                      Learn more
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  ) : (
+                    <a
+                      href={solution.href}
+                      className="inline-flex items-center gap-2 text-primary font-medium mt-4 group-hover:gap-3 transition-all"
+                    >
+                      Learn more
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>

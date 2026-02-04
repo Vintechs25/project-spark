@@ -4,10 +4,11 @@ import { Menu, X, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Solutions", href: "#solutions" },
-  { name: "About", href: "#about" },
+  { name: "Home", href: "/" },
+  { name: "Services", href: "#services" },
+  { name: "Solar Installation", href: "/solar-installation-kenya" },
   { name: "Projects", href: "#projects" },
+  { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -29,7 +30,7 @@ export const Navbar = () => {
               <Sun className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="text-xl font-bold text-foreground">
-              Techlam<span className="text-primary">Tech</span>
+              Techlam<span className="text-primary">Energy</span>
             </span>
           </a>
 

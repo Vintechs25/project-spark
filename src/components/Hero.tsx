@@ -19,7 +19,7 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="TechLam solar panel installation on commercial rooftop"
+          alt="Techlam Energy solar panel installation on commercial rooftop in Kenya"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/40" />
@@ -41,7 +41,7 @@ export const Hero = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-6"
             >
               <Zap className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Leading Renewable Energy in Kenya</span>
+              <span className="text-sm font-medium text-primary">Trusted Solar Installers Since 2015</span>
             </motion.div>
 
             <motion.h1
@@ -50,9 +50,9 @@ export const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-primary-foreground leading-tight mb-6"
             >
-              Innovative{" "}
-              <span className="text-primary">Energy</span>{" "}
-              Solutions
+              Solar & Renewable{" "}
+              <span className="text-primary">Energy Solutions</span>{" "}
+              in Kenya
             </motion.h1>
 
             <motion.p
@@ -61,7 +61,7 @@ export const Hero = () => {
               transition={{ delay: 0.4 }}
               className="text-lg sm:text-xl text-primary-foreground/80 max-w-xl mx-auto lg:mx-0 mb-8"
             >
-              Techlam Technologies Limited leads in renewable energy, offering high-performance solar solutions, hot water systems, and advanced monitoring to power a sustainable future.
+              Professional solar panel installation, battery storage and clean energy systems for homes and businesses across Kenya. Reduce your KPLC bills by up to 80%.
             </motion.p>
 
             <motion.div
