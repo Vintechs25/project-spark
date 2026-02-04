@@ -5,8 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useContactInfo } from "@/hooks/useContactInfo";
 
-const contactInfo = [
+// Default fallback contact info
+const defaultContactInfo = [
   {
     icon: Phone,
     title: "Call Us",
@@ -16,8 +18,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    value: "info@techlamtechnologies.com",
-    href: "mailto:info@techlamtechnologies.com",
+    value: "info@techlamenergy.com",
+    href: "mailto:info@techlamenergy.com",
   },
   {
     icon: MapPin,
@@ -29,12 +31,35 @@ const contactInfo = [
 
 export const Contact = () => {
   const { toast } = useToast();
+  const { contactInfo: dbContactInfo } = useContactInfo();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+
+  // Build contact info from database or use defaults
+  const contactInfo = dbContactInfo ? [
+    {
+      icon: Phone,
+      title: "Call Us",
+      value: dbContactInfo.phone || "+254 700 000 000",
+      href: `tel:${(dbContactInfo.phone || "+254700000000").replace(/\s/g, "")}`,
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      value: dbContactInfo.email || "info@techlamenergy.com",
+      href: `mailto:${dbContactInfo.email || "info@techlamenergy.com"}`,
+    },
+    {
+      icon: MapPin,
+      title: "Visit Us",
+      value: dbContactInfo.address || "Nairobi, Kenya",
+      href: "#",
+    },
+  ] : defaultContactInfo;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,7 +88,7 @@ export const Contact = () => {
             Empower Your <span className="text-gradient">Future</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Join us at Techlam Technologies for innovative renewable energy solutions that reduce costs and enhance sustainability for your business.
+            Join us at Techlam Energy for innovative renewable energy solutions that reduce costs and enhance sustainability for your business.
           </p>
         </motion.div>
 
