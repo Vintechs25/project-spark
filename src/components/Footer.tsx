@@ -1,18 +1,19 @@
 import { Sun, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const quickLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Solutions", href: "#solutions" },
-  { name: "About Us", href: "#about" },
+  { name: "Home", href: "/" },
+  { name: "Solar Installation", href: "/solar-installation-kenya" },
+  { name: "Solar Water Heaters", href: "/solar-water-heaters" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
 
-const solutions = [
-  { name: "Solar PV Systems", href: "#solutions" },
-  { name: "Solar Water Heaters", href: "#solutions" },
-  { name: "Energy Monitoring", href: "#solutions" },
-  { name: "Power Factor Correction", href: "#solutions" },
+const services = [
+  { name: "Solar PV Systems", href: "/solar-installation-kenya" },
+  { name: "Solar Water Heaters", href: "/solar-water-heaters" },
+  { name: "Battery Storage", href: "/battery-storage-systems" },
+  { name: "Commercial Solar", href: "/commercial-solar-solutions" },
+  { name: "Energy Monitoring", href: "/energy-monitoring" },
 ];
 
 const socials = [
@@ -34,11 +35,11 @@ export const Footer = () => {
                 <Sun className="w-6 h-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold">
-                Techlam<span className="text-primary">Tech</span>
+                Techlam<span className="text-primary">Energy</span>
               </span>
             </a>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed mb-6">
-              Leading renewable energy solutions in Kenya. Empowering businesses and homes with sustainable solar technology.
+              Kenya's trusted solar energy company. Professional installation of solar panels, battery storage and water heating systems for homes and businesses.
             </p>
             <div className="flex gap-3">
               {socials.map((social, index) => (
@@ -71,11 +72,11 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Solutions */}
+          {/* Services */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Our Solutions</h4>
+            <h4 className="font-semibold text-lg mb-4">Our Services</h4>
             <ul className="space-y-3">
-              {solutions.map((link, index) => (
+              {services.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
@@ -99,8 +100,8 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@techlamtechnologies.com" className="hover:text-primary transition-colors">
-                  info@techlamtechnologies.com
+                <a href="mailto:info@techlamenergy.com" className="hover:text-primary transition-colors">
+                  info@techlamenergy.com
                 </a>
               </li>
             </ul>
@@ -110,7 +111,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-secondary-foreground/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-secondary-foreground/50">
-            © {new Date().getFullYear()} Techlam Technologies Limited. All rights reserved.
+            © {new Date().getFullYear()} Techlam Energy Ltd. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-secondary-foreground/50">
             <a href="#" className="hover:text-primary transition-colors">
