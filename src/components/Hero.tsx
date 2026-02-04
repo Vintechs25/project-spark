@@ -80,7 +80,7 @@ export const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6"
+                className="border-white/50 text-white bg-white/10 hover:bg-white/20 text-lg px-8 py-6"
               >
                 Learn More
               </Button>
